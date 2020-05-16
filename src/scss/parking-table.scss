@@ -1,0 +1,22 @@
+.parking-table {
+  border-collapse: collapse;
+}
+
+.parking-table__cell {
+  border-bottom: 1px solid #e4e4e4;
+  height: 40px;
+  color: $font-color;
+  padding-left: 10px;
+}
+
+.parking-table__cell_tenant {
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.parking-table__cell_empty {
+  font-weight: 300;
+  color: $font-color-placeholder;
+}

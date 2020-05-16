@@ -1,0 +1,15 @@
+.header {
+  width: 100vw;
+  background-color: rgb(250, 246, 34);
+  font-size: 36px;
+  color: $font-color;
+  box-shadow: $box-shadow;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85px;
+}
+

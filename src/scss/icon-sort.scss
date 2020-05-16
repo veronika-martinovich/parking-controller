@@ -1,0 +1,17 @@
+.icon_sort {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-size: cover;
+  cursor: pointer;
+  float: right;
+  margin-top: 5px;
+}
+
+.icon_sort_ascending {
+  background-image: url("../images/icon_sort_ascending.png");
+}
+
+.icon_sort_descending {
+  background-image: url("../images/icon_sort_descending.png");
+}
