@@ -41,18 +41,18 @@
   outline: none;
 }
 
-.modal__input {
+.input {
   width: 350px;
   height: 35px;
 }
 
-.modal__select {
+.select {
   width: 372px;
   height: 40px;
 }
 
-.modal__input,
-.modal__select {
+.input,
+.select {
   margin-bottom: 15px;
   border: 1px solid $border-color;
   border-radius: 2px;

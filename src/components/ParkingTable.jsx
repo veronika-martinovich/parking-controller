@@ -1,29 +1,24 @@
 import React from "react";
 import { IconSort } from "./IconSort";
-import { Loader } from "./Loader";
 import { dynamicSort } from "../functions/dynamicSort";
 
 export class ParkingTable extends React.Component {
-  constructor() {
+  constructor(props) {
     super();
     this.state = {
-      cars: null,
+      cars: props.cars,
       tenantSorting: "ascending",
-      numberSorting: "ascending"
+      numberSorting: "ascending",
     };
   }
 
-  async componentDidMount() {
-    const response = await fetch("http://80.249.84.47:11000/api/cars/");
-    const cars = await response.json();
-    console.log(cars);
-    this.setState({
-      cars,
-    });
+  componentDidUpdate(prevProps) {
+    if (prevProps.cars !== this.props.cars) {
+      this.setState({ cars: this.props.cars });
+    }
   }
 
   render() {
-    if (!this.state.cars) return <Loader/>;
     return (
       <table className="parking-table">
         <thead>
@@ -36,9 +31,13 @@ export class ParkingTable extends React.Component {
                   this.setState({
                     cars:
                       this.state.tenantSorting === "descending"
-                        ? this.state.cars.sort(dynamicSort("car_tenant", "name"))
-                        : this.state.cars.sort(dynamicSort("-car_tenant", "name")),
-                      tenantSorting:
+                        ? this.state.cars.sort(
+                            dynamicSort("car_tenant", "name")
+                          )
+                        : this.state.cars.sort(
+                            dynamicSort("-car_tenant", "name")
+                          ),
+                    tenantSorting:
                       this.state.tenantSorting === "descending"
                         ? "ascending"
                         : "descending",

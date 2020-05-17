@@ -70,12 +70,7 @@ export class AddCarModal extends React.Component {
         'Content-Type': 'application/json;charset=utf-8'
       },
       body: JSON.stringify(bodyObject),
-    });
-    let result = await response.json();
-    this.setState({
-      newCarID: result.id
-    })
-    
+    }); 
   };
 
   render() {
@@ -86,18 +81,10 @@ export class AddCarModal extends React.Component {
         </div>
       );
 
-    //if (this.state.newCarID) {
-    //  ReactDOM.unmountComponentAtNode(ReactDOM.findDOMNode(this).parentNode);
-    //}
-
     return (
       <div className="overlay">
         <div className="modal">
-          <IconClose onClick={() => {
-            this.setState({
-              newCarID: "none"
-            })
-          }}/>
+          <IconClose onCloseIconClick={this.props.onCloseIconClick}/>
           <form
             action=""
             className="modal__form"
@@ -108,14 +95,14 @@ export class AddCarModal extends React.Component {
               name="car_tenant"
               id=""
               defaultValue="Select tenant"
-              className="modal__select"
+              className="select modal__select"
               required
               onChange={(e) => {
                 this.handleSelectChange(e, this.state.tenants);
               }}
             >
               <option value="Select tenant" hidden>
-                Select tenant
+                Select tenant *
               </option>
               {this.state.tenants.map((tenant) => (
                 <option key={tenant.id} value={tenant.name}>
@@ -128,8 +115,8 @@ export class AddCarModal extends React.Component {
               name="car_number"
               id=""
               value={this.state.car_number}
-              className="modal__input"
-              placeholder="Enter car number"
+              className="input modal__input"
+              placeholder="Enter car number *"
               required
               autoComplete="off"
               onChange={this.handleInputChange}
@@ -138,7 +125,7 @@ export class AddCarModal extends React.Component {
               name="car_brand"
               id=""
               defaultValue="Select car brand"
-              className="modal__select"
+              className="select modal__select"
               onChange={async (e) => {
                 this.handleSelectChange(e, this.state.brands);
                 const brandID = this.state.brands.find(
@@ -166,7 +153,7 @@ export class AddCarModal extends React.Component {
               name="car_model"
               id=""
               defaultValue="Select car model"
-              className="modal__select"
+              className="select modal__select"
               onChange={(e) => {
                 this.handleSelectChange(e, this.state.models);
               }}
