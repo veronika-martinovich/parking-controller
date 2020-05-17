@@ -84,7 +84,10 @@ export class AddCarModal extends React.Component {
     return (
       <div className="overlay">
         <div className="modal">
-          <IconClose onCloseIconClick={this.props.onCloseIconClick}/>
+          <div className="modal__header-wrapper">
+            <h2 className="modal__heading">Add new car</h2>
+            <IconClose onCloseIconClick={this.props.onCloseIconClick}/>
+          </div>
           <form
             action=""
             className="modal__form"

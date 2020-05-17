@@ -15,7 +15,6 @@
 .modal {
   display: flex;
   flex-flow: column;
-  align-items: flex-end;
   border: 2px solid $base-color;
   background-color: #ffffff;
   border-radius: 4px;
@@ -41,29 +40,13 @@
   outline: none;
 }
 
-.input {
-  width: 350px;
-  height: 35px;
+.modal__header-wrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
-.select {
-  width: 372px;
-  height: 40px;
-}
-
-.input,
-.select {
-  margin-bottom: 15px;
-  border: 1px solid $border-color;
-  border-radius: 2px;
-  outline: none;
-  padding-left: 10px;
-  padding-right: 10px;
-  
-
-  &::placeholder {
-    color: $font-color-placeholder;
-  }
+.modal__heading {
+  margin: 0;
 }
 
 .modal__select:first-child {

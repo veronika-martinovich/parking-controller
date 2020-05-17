@@ -7,12 +7,13 @@ export class ActionsPanel extends React.Component {
     super();
     this.state = {
       cars: props.cars,
-      car_tenant: '',
+      car_tenant: "",
+      car_number: "",
       carToAdd: false,
     };
   }
 
-  handleSelectChange = async (e) => {
+  handleChange = async (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -44,9 +45,9 @@ export class ActionsPanel extends React.Component {
           name="car_tenant"
           id=""
           defaultValue="Select tenant"
-          className="select"
+          className="select actions-panel__select"
           onChange={async (e) => {
-            await this.handleSelectChange(e);
+            await this.handleChange(e);
             this.props.onTenantSelect(this.state.car_tenant);
           }}
         >
@@ -59,7 +60,20 @@ export class ActionsPanel extends React.Component {
             </option>
           ))}
         </select>
-        <input type="text"/>
+        <input
+          type="text"
+          className="input actions-panel__input"
+          name="car_number"
+          placeholder="Enter car number"
+          onChange={(e) => {
+            this.handleChange(e);
+          }}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              this.props.onNumberSearch(this.state.car_number);
+            }
+          }}
+        />
       </div>
     );
   }

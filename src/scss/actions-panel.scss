@@ -1,8 +1,13 @@
 .actions-panel {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding-bottom: 15px;
   border-bottom: 1px solid $border-color;
   margin-bottom: 20px;
+}
+
+.actions-panel__select,
+.actions-panel__input {
+  margin-left: 15px;
 }
