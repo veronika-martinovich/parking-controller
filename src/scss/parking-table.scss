@@ -3,9 +3,8 @@
 }
 
 .parking-table__cell {
-  border-bottom: 1px solid #e4e4e4;
+  border-bottom: 1px solid $border-color;
   height: 40px;
-  color: $font-color;
   padding-left: 10px;
 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { IconSort } from "./IconSort";
+import { Loader } from "./Loader";
 import { dynamicSort } from "../functions/dynamicSort";
 
 export class ParkingTable extends React.Component {
@@ -22,7 +23,7 @@ export class ParkingTable extends React.Component {
   }
 
   render() {
-    if (!this.state.cars) return "Loading car data";
+    if (!this.state.cars) return <Loader/>;
     return (
       <table className="parking-table">
         <thead>

@@ -1,0 +1,12 @@
+.button {
+  width: 120px;
+  height: 35px;
+  background-color: #ffffff;
+  border: 2px solid $base-color;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $base-color;
+  }
+}

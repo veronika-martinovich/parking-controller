@@ -1,6 +1,8 @@
 // Common
 @import "./constants.scss";
 @import "./base.scss";
+@import "./loader.scss";
+@import "./button.scss";
 
 // Header
 @import "./header.scss";
@@ -8,3 +10,7 @@
 // Parking table
 @import "./parking-table.scss";
 @import "./icon-sort.scss";
+
+// Add car modal
+@import "./add-car-modal.scss";
+@import "./icon-close.scss";

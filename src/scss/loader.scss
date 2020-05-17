@@ -1,0 +1,26 @@
+.loader {
+  margin: 0 auto;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  padding: 5px;
+  background: linear-gradient(to bottom left, $base-color 20%, $base-color 30%, #f8f6f6 60%);
+  border-radius: 50%;
+  animation: spin 1s infinite ease;
+}
+
+.loader__inner {
+  background-color: #ffffff;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
