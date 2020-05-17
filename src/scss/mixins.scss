@@ -1,0 +1,7 @@
+@mixin media-tablet-small {
+  @media (max-width: $tablet-small-width) { @content; }
+}
+
+@mixin media-mobile-big {
+  @media (max-width: $mobile-big-width) { @content; }
+}

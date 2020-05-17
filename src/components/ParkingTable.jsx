@@ -75,12 +75,12 @@ export class ParkingTable extends React.Component {
               <td className="parking-table__cell parking-table__cell_tenant">
                 {car.car_tenant.name}
               </td>
-              <td className="parking-table__cell">{car.car_number}</td>
+              <td className="parking-table__cell parking-table__cell_number">{car.car_number}</td>
               <td
                 className={
                   car.car_brand
-                    ? "parking-table__cell"
-                    : "parking-table__cell parking-table__cell_empty"
+                    ? "parking-table__cell parking-table__cell_brand"
+                    : "parking-table__cell parking-table__cell_brand parking-table__cell_empty"
                 }
               >
                 {car.car_brand ? car.car_brand.name : "Brand"}
@@ -88,8 +88,8 @@ export class ParkingTable extends React.Component {
               <td
                 className={
                   car.car_model
-                    ? "parking-table__cell"
-                    : "parking-table__cell parking-table__cell_empty"
+                    ? "parking-table__cell parking-table__cell_model"
+                    : "parking-table__cell parking-table__cell_model parking-table__cell_empty"
                 }
               >
                 {car.car_model ? car.car_model.name : "Model"}

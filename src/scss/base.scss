@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   overflow-x: hidden;
   color: $font-color;
@@ -7,27 +13,29 @@ body {
   padding: 30px;
 }
 
-.input {
-  width: 350px;
-  height: 36px;
-}
-
-.select {
-  width: 372px;
-  height: 40px;
-}
-
 .input,
 .select {
+  width: 350px;
+  height: 40px;
   margin-bottom: 15px;
   border: 1px solid $border-color;
   border-radius: 4px;
   outline: none;
   padding-left: 10px;
   padding-right: 10px;
-  
 
   &::placeholder {
     color: $font-color-placeholder;
+  }
+}
+
+@include media-mobile-big {
+  .main {
+    padding: 15px;
+  }
+
+  .select,
+  .input {
+    width: 270px;
   }
 }

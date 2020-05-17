@@ -1,3 +1,12 @@
+## To start the project follow the next steps:
+1. fork the repository
+2. clone the repository locally via 'git clone'
+3. execute via cli 'npm install'
+4. execute via cli 'npm start'
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -10,4 +10,19 @@
 .actions-panel__select,
 .actions-panel__input {
   margin-left: 15px;
+}  
+
+@include media-tablet-small {
+  .actions-panel {
+    flex-direction: column;
+  }
+
+  .actions-panel__select,
+  .actions-panel__input {
+    margin-left: 0px;
+  }  
+
+  .actions-panel__select {
+    margin-top: 15px;
+  }
 }

@@ -1,6 +1,6 @@
 .overlay {
   position: fixed;
-  width: 103%;
+  width: 107%;
   height: 130%;
   top: -115px;
   left: -30px;
@@ -51,4 +51,10 @@
 
 .modal__select:first-child {
   margin-top: 15px;
+}
+
+@include media-mobile-big {
+  .overlay {
+    width: 116%;
+  }
 }

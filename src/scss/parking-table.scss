@@ -7,16 +7,41 @@
   border-bottom: 1px solid $border-color;
   height: 40px;
   padding-left: 10px;
-}
-
-.parking-table__cell_tenant {
-  max-width: 200px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
+.parking-table__cell_tenant {
+  max-width: 200px;
+  
+}
+
 .parking-table__cell_empty {
   font-weight: 300;
   color: $font-color-placeholder;
+}
+
+@include media-tablet-small {
+  .parking-table__cell_tenant {
+    max-width: 130px;
+  }
+
+  .parking-table__cell_number,
+  .parking-table__cell_brand,
+  .parking-table__cell_model {
+    max-width: 90px;
+  }
+}
+
+@include media-mobile-big {
+  .parking-table__cell_tenant {
+    max-width: 100px;
+  }
+
+  .parking-table__cell_number,
+  .parking-table__cell_brand,
+  .parking-table__cell_model {
+    max-width: 70px;
+  }
 }
