@@ -23,6 +23,7 @@ export class AddCarModal extends React.Component {
       newCarID: null
     };
   }
+  closeModalRef = React.createRef();
 
   async componentDidMount() {
     const responseTenants = await fetch(
@@ -33,7 +34,6 @@ export class AddCarModal extends React.Component {
       "http://80.249.84.47:11000/api/cars/brands/"
     );
     const brands = await responseBrands.json();
-    console.log(tenants, brands);
     this.setState({
       tenants,
       brands,
@@ -64,6 +64,7 @@ export class AddCarModal extends React.Component {
       'car_number': this.state.car_number,
       'car_tenant': this.state.selectedIDs.car_tenant,
     };
+    console.log(bodyObject);
     let response = await fetch("http://80.249.84.47:11000/api/cars/add/", {
       method: "POST",
       headers: {
@@ -71,6 +72,12 @@ export class AddCarModal extends React.Component {
       },
       body: JSON.stringify(bodyObject),
     }); 
+    console.log(response);
+    let newCar = await response.json();
+    this.setState({
+      newCarID: newCar.id
+    })
+    this.closeModalRef.current.click();
   };
 
   render() {
@@ -86,7 +93,7 @@ export class AddCarModal extends React.Component {
         <div className="modal">
           <div className="modal__header-wrapper">
             <h2 className="modal__heading">Add new car</h2>
-            <IconClose onCloseIconClick={this.props.onCloseIconClick}/>
+            <IconClose ref={this.closeModalRef} onCloseIconClick={this.props.onCloseIconClick}/>
           </div>
           <form
             action=""
